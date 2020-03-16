@@ -1,0 +1,26 @@
+"""
+Created on Wed Feb 26 11:37:26 2020
+
+@author: JAR51333
+"""
+
+import pandas as pd
+
+filepath = 'C:\\Users\\JAR51333\\OneDrive - Spectrum Health\\Documents\\Jared\'s Files\\Python\\NLP Datasets\\Combined_News_DJIA.csv'
+
+df = (pd.read_csv(filepath))
+
+#df_train = df.loc[df['Date'] < '12/31/2014']
+
+
+#create 80% of data for training
+df_train = df.iloc[0:1613]
+#test last 20% of data 
+df_test = df.iloc[1613:1990]
+
+#create X and Y values
+array = df.values
+
+X = array[:,2:7]
+Y = array[:,1]
+
